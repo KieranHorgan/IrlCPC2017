@@ -15,11 +15,11 @@ int main() {
 		for(int i = 0; i < m; i++) {
 			int a, b;
 			cin >> a >> b;
-			AdjList[a].push_back(b);
-			degree[b]++;
+			AdjList[b].push_back(a);
+			degree[a]++;
 		}
 
-		priority_queue<int> pq;
+		priority_queue<int, vector<int>, greater<int>> pq;
 		for(int i = 0; i < n; i++) {
 			if(degree[i]==0) pq.push(i);
 		}
@@ -39,7 +39,7 @@ int main() {
 			ans.push_back(c);
 		}
 
-		for(int i = n-1; i >= 0; i--) {
+		for(int i = 0; i < n; i++) {
 			cout << ans[i] << " ";
 		}
 		cout << endl;
