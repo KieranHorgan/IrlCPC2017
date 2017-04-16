@@ -11,6 +11,11 @@ int main() {
 	cin >> N;
 	for(int x = 0; x < N; x++) {
 		cin >> n >> m;
+
+		for(int i = 0; i < 100005; i++) {
+			degree[i]=0;
+			AdjList[i]={};
+		}
 		
 		for(int i = 0; i < m; i++) {
 			int a, b;
@@ -40,8 +45,7 @@ int main() {
 		}
 
 		for(int i = 0; i < n; i++) {
-			cout << ans[i] << " ";
+			cout << ans[i] << " \n"[i==n-1];
 		}
-		cout << endl;
 	}
 }
